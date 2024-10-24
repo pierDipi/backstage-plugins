@@ -1,0 +1,10 @@
+ARG BASE=
+
+FROM $BASE AS base
+
+COPY templates templates
+
+USER 1001
+
+# Launch the Backstage application
+CMD ["node", "packages/backend", "--config", "app-config.yaml"]
