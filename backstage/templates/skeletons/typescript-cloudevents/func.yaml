@@ -7,3 +7,7 @@ build:
   buildEnvs:
   - name: BP_NODE_RUN_SCRIPTS
     value: build
+build:
+  buildEnvs: []
+run:
+  envs: []

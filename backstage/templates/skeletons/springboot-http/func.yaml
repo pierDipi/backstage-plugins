@@ -14,3 +14,7 @@ deploy:
   healthEndpoints:
     liveness: /actuator/health
     readiness: /actuator/health
+build:
+  buildEnvs: []
+run:
+  envs: []

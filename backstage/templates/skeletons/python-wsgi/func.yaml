@@ -6,3 +6,7 @@ run:
   envs:
   - name: APP_MODULE
     value: func:main
+build:
+  buildEnvs: []
+run:
+  envs: []

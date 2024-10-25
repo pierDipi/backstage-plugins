@@ -13,3 +13,7 @@ build:
     value: target/quarkus-app
   - name: S2I_SOURCE_DEPLOYMENTS_FILTER
     value: lib quarkus-run.jar app quarkus
+build:
+  buildEnvs: []
+run:
+  envs: []

@@ -7,3 +7,7 @@ build:
   buildEnvs:
   - name: BP_RUSTUP_ENABLED
     value: "false"
+build:
+  buildEnvs: []
+run:
+  envs: []
