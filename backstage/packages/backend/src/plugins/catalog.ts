@@ -8,11 +8,21 @@ import {
   KnativeEventMeshProvider
 } from '@knative-extensions/plugin-knative-event-mesh-backend';
 
+import { GithubMultiOrgEntityProvider } from '@backstage/plugin-catalog-backend-module-github-org';
+
 export default async function createPlugin(
   env: PluginEnvironment,
 ): Promise<Router> {
   const builder = CatalogBuilder.create(env);
   builder.addProcessor(new ScaffolderEntitiesProcessor());
+
+  builder.addEntityProvider(
+      GithubMultiOrgEntityProvider.fromConfig(env.config, {
+        id: "production",
+        githubUrl: "https://github.com",
+        logger: env.logger,
+      })
+  );
 
   const knativeEventMeshProviders = KnativeEventMeshProvider.fromConfig(env.config, {
     logger: env.logger,
